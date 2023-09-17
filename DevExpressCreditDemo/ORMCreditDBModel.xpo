@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1d216bca-884b-4510-9384-d068b474f831" namespace="DevExpressCreditDemo.credit" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" connectionStringName="CreditDB" createdInVersion="23.1.5.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="23.1.5.0" name="credit" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="a42b5071-8d14-46d5-98d4-100d123d6ef9">
+      <xpObject Id="f38400fd-329f-4a4e-bb8f-0d49ba99ed87" name="Agreement" baseClass="XPLiteObject" userFileName="Agreement" designerFileName="Agreement.Designer" className="Agreement" initialName="Agreement" virtualBaseClass="XPLiteObject" persistent="Agreement" virtualName="Agreement">
+        <fields>
+          <generalXpObjectHasFields Id="7f18a470-24c7-4d42-9edd-ac2849b442e5">
+            <field Id="4b8dc5b2-9a02-4fc8-a86a-b20a3132e22e" name="ID" columnType="Int64" initialName="ID" key="true" persistent="ID" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c487488d-0508-429e-a2ed-882e49c4c277">
+            <field Id="d0ca2833-541b-4a3c-8860-a71ebb3f1969" name="IDClient" columnType="Int64" initialName="IDClient" persistent="IDClient" virtualColumnType="Client" logicalType="Client" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="00e79d5a-7968-48f5-afcb-15212ffc2bf5">
+            <field Id="fa6aa676-ac32-4dcf-88a6-fdf9636b5228" name="StartDate" initialName="StartDate" persistent="StartDate" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="42cbc8cb-816d-48a7-9350-de502fc3f354">
+            <field Id="f6a366f3-1568-4fa2-8d54-19e54cbe4276" name="EndDate" initialName="EndDate" persistent="EndDate" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6ed2bf11-b143-44e6-b924-8f66e84505f6">
+            <field Id="3b1a0bf1-170e-4fff-9bb9-bddbdd9e4d65" name="Amount" columnType="Double" initialName="Amount" persistent="Amount" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b4fb7c4b-8037-45d3-9cbb-7d225cea9e25">
+            <field Id="c0cf6dba-1871-409e-b37a-b098f45c864a" name="Attachment" columnType="ByteArray" initialName="Attachment" persistent="Attachment" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="883cca48-a1ff-4cb1-8c7d-31ac9659ed5b">
+            <field Id="1ef7fe66-fd25-42a3-94ab-72d9f434459b" name="Active" columnType="Int64" initialName="Active" persistent="Active" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="22d3b102-7453-4bfa-8daf-a768a6218028" sourceCollectionName="RepaymentsCollection" name="RepaymentsReferencesAgreement" targetFieldName="IDAgreement">
+            <xpObjectMoniker Id="4251e592-f067-4731-aa13-47065c2aa6a4" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="8ec877a8-adae-4e87-b5e6-5c0f48226ea9">
+            <collectionField Id="507914c8-4f4c-4dd4-b102-865f18c44e78" name="RepaymentsCollection" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="cdacfbcb-146a-43f2-98fa-a1a5cdd5b444">
+      <xpObject Id="ca03906e-673c-4bfa-84e7-956b99759ca0" name="Client" baseClass="XPLiteObject" userFileName="Client" designerFileName="Client.Designer" className="Client" initialName="Client" virtualBaseClass="XPLiteObject" persistent="Client" virtualName="Client">
+        <fields>
+          <generalXpObjectHasFields Id="0675b85c-6be3-416d-b692-8a78dd5fce9b">
+            <field Id="66100799-1f28-48ca-9749-520581d0ea67" name="ID" columnType="Int64" initialName="ID" key="true" persistent="ID" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="14660ec0-3780-4a2c-8602-0aff79e06bbc">
+            <field Id="21c6b921-bcb7-44f1-ba6a-fc9ba4d88d03" name="FirstName" initialName="FirstName" persistent="FirstName" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f833dc24-b07f-4b1a-8193-19ce7b2f72c9">
+            <field Id="b6818758-6383-47c4-b62b-017daef0c5dc" name="LastName" initialName="LastName" persistent="LastName" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3d95c28c-2577-47da-be81-c7e942dea1da">
+            <field Id="786bd459-f88f-4b06-b26a-136dd19c12b0" name="PESEL" initialName="PESEL" persistent="PESEL" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="488b9b85-1462-43bc-a1d2-577459b7f4e2">
+            <field Id="bf5f7dac-d602-45a3-a785-86188514786e" name="Active" columnType="Int64" initialName="Active" persistent="Active" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <indexes>
+          <xpObjectHasIndexes Id="df3df5a7-c3ca-4378-b6aa-bda17147e093">
+            <index Id="ae243126-a1ce-454f-b176-c2211f6e046e" name="sqlite_autoindex_Client_1" unique="true">
+              <fieldsInIndex>
+                <indexReferencesFields Id="772a2ed2-47e9-4ea7-91ca-6f5e48e8fe04">
+                  <fieldMoniker Id="786bd459-f88f-4b06-b26a-136dd19c12b0" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+        </indexes>
+        <saTargets>
+          <simpleAssociation Id="100aa56e-b383-4507-b2b8-44e11779a3e3" sourceCollectionName="Agreements" name="AgreementReferencesClient" targetFieldName="IDClient">
+            <xpObjectMoniker Id="f38400fd-329f-4a4e-bb8f-0d49ba99ed87" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="fe5b31ca-a361-492f-9c90-abf912fb927a">
+            <collectionField Id="8d5f008a-962c-4aca-9796-2dc826e85af6" name="Agreements" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="8317b736-6178-4f65-9d09-5ec2dfbfdbd6">
+      <xpObject Id="4251e592-f067-4731-aa13-47065c2aa6a4" name="Repayments" baseClass="XPLiteObject" userFileName="Repayments" designerFileName="Repayments.Designer" className="Repayments" initialName="Repayments" virtualBaseClass="XPLiteObject" persistent="Repayments" virtualName="Repayments">
+        <fields>
+          <generalXpObjectHasFields Id="29da04b5-7c50-4917-ae9c-051c263d7d11">
+            <field Id="89a447d9-a0ef-450a-888b-69bd17e9b72e" name="ID" columnType="Int64" initialName="ID" key="true" persistent="ID" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="40ad649f-7f39-4498-b30c-d7fe63f0c64d">
+            <field Id="8be88c35-0f9e-4024-b47a-1ececfea61fc" name="IDAgreement" columnType="Int64" initialName="IDAgreement" persistent="IDAgreement" virtualColumnType="Agreement" logicalType="Agreement" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9b9d2d18-2b85-4c81-b81d-69f0bc6dde16">
+            <field Id="6b626aaa-af71-43d8-90f5-dbed76c678ad" name="Date" initialName="Date" persistent="Date" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="eccc940a-d400-4520-8113-bf3d48945869">
+            <field Id="61def9e0-ee99-40ad-b801-f6ace7d55bb9" name="Value" columnType="Double" initialName="Value" persistent="Value" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="fb9a4986-cb66-43d0-8e8f-17b498a1143e">
+      <xpObject Id="b9fd7ba1-e440-4792-94f6-908f538f549c" name="User" baseClass="XPLiteObject" userFileName="User" designerFileName="User.Designer" className="User" initialName="User" virtualBaseClass="XPLiteObject" persistent="User" virtualName="User">
+        <fields>
+          <generalXpObjectHasFields Id="95506239-720c-4d08-81a9-90aba8c85a4c">
+            <field Id="83e139ed-0161-4407-9edd-7d782a16eeaa" name="ID" columnType="Int64" initialName="ID" key="true" persistent="ID" virtualColumnType="Int64" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="ad9f87ec-6f33-496e-a142-d5c69e412cef">
+            <field Id="0807239b-f94f-4b03-a566-f989ef3ac30e" name="Name" initialName="Name" persistent="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="fbd623f2-f140-4040-b59f-b146e96429fb">
+            <field Id="822f311f-e7f3-4bef-be73-5e09f0cc7fad" name="FullName" initialName="FullName" persistent="FullName" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7a81def8-1671-401f-b3b4-c5787d0cb09d">
+            <field Id="2b3dfb4c-c766-4b73-8eef-7ee4a46cd35b" name="Login" initialName="Login" persistent="Login" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5b01dde4-dc8d-472a-bdfd-0299d6ca253e">
+            <field Id="3467593e-9023-4d58-8445-f5d4027f3dc9" name="HashPass" initialName="HashPass" persistent="HashPass" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+        </fields>
+        <indexes>
+          <xpObjectHasIndexes Id="fe3241b2-da68-40ca-a417-78aee6c8431c">
+            <index Id="654c3e49-3fdb-4c04-b5a7-ec7221eac355" name="sqlite_autoindex_User_1" unique="true">
+              <fieldsInIndex>
+                <indexReferencesFields Id="9833a296-9bc5-4d25-b2ff-a91e5bad4e6c">
+                  <fieldMoniker Id="2b3dfb4c-c766-4b73-8eef-7ee4a46cd35b" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+        </indexes>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

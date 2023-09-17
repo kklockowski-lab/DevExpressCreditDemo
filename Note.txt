@@ -1,0 +1,3 @@
+WinForms w .net framework 4.8
+Wybrałem fluent templeta
+devexpress w wwersji trail werska 23.1.5
