@@ -28,43 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.gridControlClients = new DevExpress.XtraGrid.GridControl();
+            this.gridViewClients = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewClients)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // gridControlClients
             // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 38);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(626, 453);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridControlClients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlClients.Location = new System.Drawing.Point(0, 0);
+            this.gridControlClients.MainView = this.gridViewClients;
+            this.gridControlClients.Name = "gridControlClients";
+            this.gridControlClients.Size = new System.Drawing.Size(659, 527);
+            this.gridControlClients.TabIndex = 0;
+            this.gridControlClients.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewClients});
             // 
-            // gridView1
+            // gridViewClients
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gridViewClients.GridControl = this.gridControlClients;
+            this.gridViewClients.Name = "gridViewClients";
             // 
             // UcClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridControlClients);
             this.Name = "UcClients";
             this.Size = new System.Drawing.Size(659, 527);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UcClients_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewClients)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControlClients;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewClients;
     }
 }

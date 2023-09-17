@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Xpo;
+using DevExpress.XtraEditors;
+using DevExpressCreditDemo.credit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,14 @@ namespace DevExpressCreditDemo.UI.Modules
         public UcClients()
         {
             InitializeComponent();
+        }
+
+        private void UcClients_Load(object sender, EventArgs e)
+        {
+            IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
+            Session session = new Session(dataLayer);
+
+            gridControlClients.DataSource = session.Query<Client>();
         }
     }
 }
