@@ -28,39 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            this.chartControlMontlyPaid = new DevExpress.XtraCharts.ChartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlMontlyPaid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartControl1
+            // chartControlMontlyPaid
             // 
-            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Legend.LegendID = -1;
-            this.chartControl1.Location = new System.Drawing.Point(0, 0);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.Size = new System.Drawing.Size(810, 607);
-            this.chartControl1.TabIndex = 0;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControlMontlyPaid.Diagram = xyDiagram1;
+            this.chartControlMontlyPaid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControlMontlyPaid.Legend.LegendID = -1;
+            this.chartControlMontlyPaid.Location = new System.Drawing.Point(0, 0);
+            this.chartControlMontlyPaid.Name = "chartControlMontlyPaid";
+            series1.Name = "Oczekiwano";
+            series1.SeriesID = 0;
+            series2.Name = "Wpłacono";
+            series2.SeriesID = 1;
+            this.chartControlMontlyPaid.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1,
+        series2};
+            this.chartControlMontlyPaid.Size = new System.Drawing.Size(810, 607);
+            this.chartControlMontlyPaid.TabIndex = 0;
             chartTitle1.Text = "Miesięczne wpłaty vs. oczekiwane";
             chartTitle1.TitleID = 0;
-            this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            this.chartControlMontlyPaid.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
             // 
             // UcStatMonthlyDiff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chartControl1);
+            this.Controls.Add(this.chartControlMontlyPaid);
             this.Name = "UcStatMonthlyDiff";
             this.Size = new System.Drawing.Size(810, 607);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            this.Load += new System.EventHandler(this.UcStatMonthlyDiff_Load);
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControlMontlyPaid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private DevExpress.XtraCharts.ChartControl chartControlMontlyPaid;
     }
 }

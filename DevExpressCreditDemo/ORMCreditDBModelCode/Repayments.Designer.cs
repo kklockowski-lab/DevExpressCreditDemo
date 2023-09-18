@@ -45,6 +45,11 @@ namespace DevExpressCreditDemo.credit
             get { return fValue; }
             set { SetPropertyValue<double>(nameof(Value), ref fValue, value); }
         }
-    }
 
+        public DateTime DateOfPay
+        {
+            get { return DateTime.Parse(fDate); }
+        }
+
+    }
 }

@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BizModel\MontlyPeyment.cs" />
     <Compile Include="DataGenerator\Enums.cs" />
     <Compile Include="DataGenerator\PESEL.cs" />
     <Compile Include="DataGenerator\RandomedAgreement.cs" />
