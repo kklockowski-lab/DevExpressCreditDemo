@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpo;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpressCreditDemo.credit;
 using DevExpressCreditDemo.ORMCreditDBModelCode;
 using System;
@@ -25,7 +26,29 @@ namespace DevExpressCreditDemo.UI.Modules
         {
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
-            gridControlRepeyment.DataSource = session.Query<Repayments>();
+            gridControlRepeyment.DataSource = session.Query<VM_RepementClients>();
+        }
+
+        private void gridViewRepeyment_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                bool isAfter = PaidAfter(view, e.RowHandle);
+                if (isAfter)
+                {
+                    e.Appearance.BackColor = Color.DeepPink;
+                    e.Appearance.BackColor2 = Color.White;
+                }
+            }
+        }
+
+        private bool PaidAfter(GridView view, int rowHandle)
+        {
+            DateTime paidDate = DateTime.Parse(view.GetRowCellValue(rowHandle, "Date").ToString());
+            int  shouldDay = int.Parse(view.GetRowCellValue(rowHandle, "DayOfPement").ToString());
+
+            return paidDate.Day > shouldDay;
         }
     }
 }

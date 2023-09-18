@@ -17,6 +17,8 @@ namespace DevExpressCreditDemo.ORMCreditDBModelCode
         public long IDAgreement { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string PESEL { get; set; }
+        public long Active { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
 

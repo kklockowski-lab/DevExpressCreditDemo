@@ -21,8 +21,7 @@ namespace DevExpressCreditDemo
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
             session.Connect();
-
-            // var clients = RandomedPerson.GenrateClients(session, 10);           
+            // var clients = RandomedPerson.GenrateClients(session, 10);         
 
             //var agreements = RandomedAgreement.Generate(session);
 
