@@ -19,13 +19,14 @@ namespace DevExpressCreditDemo.credit
     public partial class Agreement : XPLiteObject
     {
         long fID;
-        [Key(true)]
+        [Key]
         public long ID
         {
             get { return fID; }
             set { SetPropertyValue<long>(nameof(ID), ref fID, value); }
         }
         Client fIDClient;
+        [Indexed(Name = @"iIDClient_Agreement")]
         [Association(@"AgreementReferencesClient")]
         public Client IDClient
         {
@@ -65,6 +66,30 @@ namespace DevExpressCreditDemo.credit
         {
             get { return fActive; }
             set { SetPropertyValue<long>(nameof(Active), ref fActive, value); }
+        }
+        long fPercent;
+        public long Percent
+        {
+            get { return fPercent; }
+            set { SetPropertyValue<long>(nameof(Percent), ref fPercent, value); }
+        }
+        long fIinstallmentCount;
+        public long IinstallmentCount
+        {
+            get { return fIinstallmentCount; }
+            set { SetPropertyValue<long>(nameof(IinstallmentCount), ref fIinstallmentCount, value); }
+        }
+        double fInstallment;
+        public double Installment
+        {
+            get { return fInstallment; }
+            set { SetPropertyValue<double>(nameof(Installment), ref fInstallment, value); }
+        }
+        long fDayOfPement;
+        public long DayOfPement
+        {
+            get { return fDayOfPement; }
+            set { SetPropertyValue<long>(nameof(DayOfPement), ref fDayOfPement, value); }
         }
         [Association(@"RepaymentsReferencesAgreement")]
         public XPCollection<Repayments> RepaymentsCollection { get { return GetCollection<Repayments>(nameof(RepaymentsCollection)); } }

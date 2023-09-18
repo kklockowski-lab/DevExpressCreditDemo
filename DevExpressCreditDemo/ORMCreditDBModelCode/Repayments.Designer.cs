@@ -19,7 +19,7 @@ namespace DevExpressCreditDemo.credit
     public partial class Repayments : XPLiteObject
     {
         long fID;
-        [Key(true)]
+        [Key]
         public long ID
         {
             get { return fID; }

@@ -49,6 +49,7 @@
             // 
             this.gridViewClients.GridControl = this.gridControlClients;
             this.gridViewClients.Name = "gridViewClients";
+            this.gridViewClients.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridViewClients_RowStyle);
             // 
             // UcClients
             // 

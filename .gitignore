@@ -52,3 +52,4 @@ TestResults
 
 # Ignorowanie katalogu projektów git
 .git/
+/DataBase/credit — kopia (2).sqlite

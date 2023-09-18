@@ -22,10 +22,13 @@ namespace DevExpressCreditDemo
             Session session = new Session(dataLayer);
             session.Connect();
 
-            var clients = RandomedPerson.GenrateClients(session, 10);
-            
+            // var clients = RandomedPerson.GenrateClients(session, 10);           
 
-            foreach (var client in clients) { session.Save(client); }
+            //var agreements = RandomedAgreement.Generate(session);
+
+            //var repeyments = RandomedPeyment.Generate(session);
+
+            // foreach (var agr in repeyments) { session.Save(agr); }
 
             session.Disconnect();
             ;

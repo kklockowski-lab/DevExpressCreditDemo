@@ -82,6 +82,8 @@
     <Compile Include="DataGenerator\PESEL.cs" />
     <Compile Include="DataGenerator\RandomedAgreement.cs" />
     <Compile Include="DataGenerator\RandomedPerson.cs" />
+    <Compile Include="DataGenerator\RandomedPeyment.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.Designer.cs">
       <DependentUpon>Agreement.cs</DependentUpon>
@@ -99,6 +101,7 @@
     <Compile Include="ORMCreditDBModelCode\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORMCreditDBModelCode\VM_REPAID_BY_AGREEMENT.cs" />
     <Compile Include="UI\Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
