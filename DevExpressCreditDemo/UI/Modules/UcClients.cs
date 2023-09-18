@@ -27,8 +27,8 @@ namespace DevExpressCreditDemo.UI.Modules
         {
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
-
-          //  gridControlClients.DataSource = session.Query<Client>();
+         
+            // TODO: Póki co założenie, że jeden klient ma jedną umowę!
             gridControlClients.DataSource = session.Query<VM_REPAID_BY_AGREEMENT>();
         }
 

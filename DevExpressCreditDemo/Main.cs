@@ -16,7 +16,7 @@ using System.Windows.Forms;
 namespace DevExpressCreditDemo
 {   
     public partial class Main : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
-    {
+    {       
         bool shouldClose = false;
         public Main()
         {
@@ -24,8 +24,8 @@ namespace DevExpressCreditDemo
             AddModules();
         }
 
-
-        //private void AddModules()
+        // TODO: dodawanie modułów (UserControls) z refleksji, a nie ręcznie jak AddModules
+        //private void AddModulesAsync()
         //{
         //    Assembly assm = Assembly.GetExecutingAssembly();
 
@@ -47,6 +47,8 @@ namespace DevExpressCreditDemo
             mainContainer.SuspendLayout();
             UcClients clients = new UcClients();
             UcAgreement agreement = new UcAgreement();
+            UcRepeyment repeyment = new UcRepeyment();
+            UcStatMonthlyDiff statMonthlyDiff = new UcStatMonthlyDiff();
 
             clients.Dock = DockStyle.Fill;
             clients.Visible = false;
@@ -56,6 +58,15 @@ namespace DevExpressCreditDemo
             agreement.Visible = false;
             mainContainer.Controls.Add(agreement);
 
+            repeyment.Dock = DockStyle.Fill;
+            agreement.Visible = false;
+            mainContainer.Controls.Add(repeyment);
+
+            statMonthlyDiff.Dock = DockStyle.Fill;
+            statMonthlyDiff.Visible = false;
+            mainContainer.Controls.Add(statMonthlyDiff);
+
+            
             mainContainer.ResumeLayout();
         }
 
@@ -91,6 +102,16 @@ namespace DevExpressCreditDemo
         private void ctrAgreementActive_Click(object sender, EventArgs e)
         {
             SwitchView(typeof(UcAgreement));
+        }
+
+        private void ctrPeyemnts_Click(object sender, EventArgs e)
+        {
+            SwitchView(typeof(UcRepeyment));
+        }
+
+        private void ctrStatMonhtlyDiff_Click(object sender, EventArgs e)
+        {
+            SwitchView(typeof(UcStatMonthlyDiff));
         }
     }
 }

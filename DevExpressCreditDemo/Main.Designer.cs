@@ -37,6 +37,7 @@
             this.ctrAgreementActive = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ctrPeyemnts = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementReport = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ctrStatMonhtlyDiff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.menuElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.menuElementExit = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -106,12 +107,22 @@
             this.ctrPeyemnts.Name = "ctrPeyemnts";
             this.ctrPeyemnts.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ctrPeyemnts.Text = "Wpłaty";
+            this.ctrPeyemnts.Click += new System.EventHandler(this.ctrPeyemnts_Click);
             // 
             // accordionControlElementReport
             // 
+            this.accordionControlElementReport.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ctrStatMonhtlyDiff});
             this.accordionControlElementReport.Expanded = true;
             this.accordionControlElementReport.Name = "accordionControlElementReport";
             this.accordionControlElementReport.Text = "Raporty";
+            // 
+            // ctrStatMonhtlyDiff
+            // 
+            this.ctrStatMonhtlyDiff.Name = "ctrStatMonhtlyDiff";
+            this.ctrStatMonhtlyDiff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ctrStatMonhtlyDiff.Text = "Płatności miesięcznie";
+            this.ctrStatMonhtlyDiff.Click += new System.EventHandler(this.ctrStatMonhtlyDiff_Click);
             // 
             // accordionControlElement6
             // 
@@ -180,6 +191,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement menuElementAbout;
         private DevExpress.XtraBars.Navigation.AccordionControlElement menuElementExit;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ctrPeyemnts;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ctrStatMonhtlyDiff;
     }
 }
 

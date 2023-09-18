@@ -36,13 +36,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v23.1" />
+    <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v23.1" />
     <Reference Include="DevExpress.Data.v23.1" />
     <Reference Include="DevExpress.Printing.v23.1.Core" />
     <Reference Include="DevExpress.Utils.v23.1" />
+    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v23.1" />
     <Reference Include="DevExpress.Sparkline.v23.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v23.1.Wizard, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.1" />
     <Reference Include="DevExpress.Drawing.v23.1" />
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -137,6 +142,18 @@
     <Compile Include="UI\Modules\UcClients.Designer.cs">
       <DependentUpon>UcClients.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcRepeyment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcRepeyment.Designer.cs">
+      <DependentUpon>UcRepeyment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\UcStatMonthlyDiff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcStatMonthlyDiff.Designer.cs">
+      <DependentUpon>UcStatMonthlyDiff.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcClients.resx">
       <DependentUpon>UcClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcRepeyment.resx">
+      <DependentUpon>UcRepeyment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcStatMonthlyDiff.resx">
+      <DependentUpon>UcStatMonthlyDiff.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="ORMCreditDBModel.xpo" />
