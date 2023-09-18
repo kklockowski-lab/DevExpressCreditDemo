@@ -32,11 +32,11 @@
             this.mainContainer = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementMain = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ctrCustomers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ctrAgreementActive = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ctrPeyemnts = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementReport = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.menuElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.menuElementExit = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -62,9 +62,8 @@
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement1,
-            this.accordionControlElement2,
-            this.accordionControlElement3,
+            this.accordionControlElementMain,
+            this.accordionControlElementReport,
             this.accordionControlElement6});
             this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
@@ -73,13 +72,15 @@
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
-            // accordionControlElement1
+            // accordionControlElementMain
             // 
-            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ctrCustomers});
-            this.accordionControlElement1.Expanded = true;
-            this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Klienci";
+            this.accordionControlElementMain.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ctrCustomers,
+            this.ctrAgreementActive,
+            this.ctrPeyemnts});
+            this.accordionControlElementMain.Expanded = true;
+            this.accordionControlElementMain.Name = "accordionControlElementMain";
+            this.accordionControlElementMain.Text = "Zarządzanie";
             // 
             // ctrCustomers
             // 
@@ -90,28 +91,27 @@
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
             this.ctrCustomers.Name = "ctrCustomers";
             this.ctrCustomers.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ctrCustomers.Text = "Wszyscy";
+            this.ctrCustomers.Text = "Klienci";
             this.ctrCustomers.Click += new System.EventHandler(this.ctrCustomers_Click);
-            // 
-            // accordionControlElement2
-            // 
-            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ctrAgreementActive});
-            this.accordionControlElement2.Expanded = true;
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Text = "Umowy";
             // 
             // ctrAgreementActive
             // 
             this.ctrAgreementActive.Name = "ctrAgreementActive";
             this.ctrAgreementActive.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ctrAgreementActive.Text = "Aktywne";
+            this.ctrAgreementActive.Text = "Umowy";
             this.ctrAgreementActive.Click += new System.EventHandler(this.ctrAgreementActive_Click);
             // 
-            // accordionControlElement3
+            // ctrPeyemnts
             // 
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Text = "Windykacja";
+            this.ctrPeyemnts.Name = "ctrPeyemnts";
+            this.ctrPeyemnts.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ctrPeyemnts.Text = "Wpłaty";
+            // 
+            // accordionControlElementReport
+            // 
+            this.accordionControlElementReport.Expanded = true;
+            this.accordionControlElementReport.Name = "accordionControlElementReport";
+            this.accordionControlElementReport.Text = "Raporty";
             // 
             // accordionControlElement6
             // 
@@ -158,6 +158,7 @@
             this.Name = "Main";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Credi tDemo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
@@ -170,15 +171,15 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer mainContainer;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementMain;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ctrCustomers;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementReport;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ctrAgreementActive;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
         private DevExpress.XtraBars.Navigation.AccordionControlElement menuElementAbout;
         private DevExpress.XtraBars.Navigation.AccordionControlElement menuElementExit;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ctrPeyemnts;
     }
 }
 

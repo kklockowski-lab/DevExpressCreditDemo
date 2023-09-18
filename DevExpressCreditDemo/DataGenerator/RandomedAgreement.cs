@@ -42,6 +42,7 @@ namespace DevExpressCreditDemo.DataGenerator
                     IinstallmentCount = installmentCount,
                     StartDate = startDate.ToString("yyyy-MM-dd"),
                     EndDate = endDate.ToString("yyyy-MM-dd"),
+                    Active = random.Next(1,100)>80 ? 0 :1 
                 };
 
                 result.Add(agreement);

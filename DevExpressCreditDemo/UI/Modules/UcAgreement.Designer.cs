@@ -28,30 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControlAgreement = new DevExpress.XtraGrid.GridControl();
+            this.gridViewAgrement = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAgreement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewAgrement)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton1
+            // gridControlAgreement
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(83, 57);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "simpleButton1";
+            this.gridControlAgreement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlAgreement.Location = new System.Drawing.Point(0, 0);
+            this.gridControlAgreement.MainView = this.gridViewAgrement;
+            this.gridControlAgreement.Name = "gridControlAgreement";
+            this.gridControlAgreement.Size = new System.Drawing.Size(943, 510);
+            this.gridControlAgreement.TabIndex = 0;
+            this.gridControlAgreement.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewAgrement});
+            // 
+            // gridViewAgrement
+            // 
+            this.gridViewAgrement.GridControl = this.gridControlAgreement;
+            this.gridViewAgrement.Name = "gridViewAgrement";
+            this.gridViewAgrement.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridViewAgrement_RowStyle);
             // 
             // UcAgreement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.gridControlAgreement);
             this.Name = "UcAgreement";
             this.Size = new System.Drawing.Size(943, 510);
+            this.Load += new System.EventHandler(this.UcAgreement_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAgreement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewAgrement)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.GridControl gridControlAgreement;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewAgrement;
     }
 }
