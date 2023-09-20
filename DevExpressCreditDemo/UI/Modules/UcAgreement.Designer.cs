@@ -116,6 +116,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Kowta całkowita";
+            this.gridColumn6.DisplayFormat.FormatString = "c2";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn6.FieldName = "Amount";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -124,7 +126,8 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Procent";
-            this.gridColumn7.FieldName = "Percent";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "Procent";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
@@ -140,6 +143,8 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Wysokość raty";
+            this.gridColumn9.DisplayFormat.FormatString = "c2";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn9.FieldName = "Installment";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;

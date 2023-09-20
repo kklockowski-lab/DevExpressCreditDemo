@@ -93,6 +93,33 @@ namespace DevExpressCreditDemo.credit
         }
         [Association(@"RepaymentsReferencesAgreement")]
         public XPCollection<Repayments> RepaymentsCollection { get { return GetCollection<Repayments>(nameof(RepaymentsCollection)); } }
-    }
 
+        /// <summary>
+        /// Data pierwszej wpłaty
+        /// </summary>
+        public DateTime DateStartToPaid
+        {
+            get
+            {
+                DateTime dtAgrStart = DateTime.Parse(fStartDate).AddMonths(1);
+                return new DateTime(dtAgrStart.Year, dtAgrStart.Month, (int)fDayOfPement);
+            }
+        }
+
+        /// <summary>
+        /// Data ostatniej wpłaty
+        /// </summary>
+        public DateTime DateEndToPaid
+        {
+            get
+            {
+                DateTime dtAgrStart = DateTime.Parse(fEndDate);
+                return new DateTime(dtAgrStart.Year, dtAgrStart.Month, (int)fDayOfPement);
+            }
+        }
+
+        public double PercentAsDouble { get { return (double)fPercent / 100; } }
+    }
 }
+
+

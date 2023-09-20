@@ -65,7 +65,7 @@ namespace DevExpressCreditDemo.DataGenerator
 
             DateTime date = DateTime.Parse(agr.StartDate);
 
-            int mountDebet = random.Next(1, DateTimeHelper.GetMonthDiff(date,DateTime.Now));
+            int mountDebet = random.Next(1, DateTimeHelper.MonthCountBetween(date,DateTime.Now));
 
             for (int i = 0; date.AddMonths(i) < DateTime.Now.AddMonths(mountDebet); ++i)
             {

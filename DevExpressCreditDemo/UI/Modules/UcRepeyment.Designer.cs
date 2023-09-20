@@ -91,6 +91,8 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Wartość";
+            this.gridColumn3.DisplayFormat.FormatString = "c2";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "Value";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;

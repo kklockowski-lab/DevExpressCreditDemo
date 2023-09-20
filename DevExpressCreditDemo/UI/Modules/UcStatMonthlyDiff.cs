@@ -3,12 +3,14 @@ using DevExpress.XtraCharts;
 using DevExpress.XtraEditors;
 using DevExpressCreditDemo.BizModel;
 using DevExpressCreditDemo.credit;
+using DevExpressCreditDemo.Helpers;
 using DevExpressCreditDemo.ORMCreditDBModelCode;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,26 +30,63 @@ namespace DevExpressCreditDemo.UI.Modules
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
 
-            // TODO: Póki co założenie, że jeden klient ma jedną umowę!
-            //var agreements = session.Query<Agreement>();
-            //DateTime dateReportStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            //dateReportStart = dateReportStart.AddMonths(-6);
-            //var repements = session.Query<Repayments>().Where(r=>r.DateOfPay>=dateReportStart);
+            // Lista wpłat i oczekiwań wg. miesięcy
+            List<MontlyPeyment> monthValues = new List<MontlyPeyment>();
 
-            //var gr = repements.GroupBy(r => r.Date);
+            DateTime dateReportStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dateReportStart = dateReportStart.AddMonths(-5);
 
-            List<MontlyPeyment> mont = new List<MontlyPeyment>();
-            mont.Add(new MontlyPeyment() { Month = "stycze", Excepted = 100, Paid = 590 });
-            mont.Add(new MontlyPeyment() { Month = "luty", Excepted = 1000, Paid = 903 });
-            mont.Add(new MontlyPeyment() { Month = "marzec", Excepted = 4500, Paid = 780 });
-            mont.Add(new MontlyPeyment() { Month = "kwiecień", Excepted = 300, Paid = 490 });
-            mont.Add(new MontlyPeyment() { Month = "maj", Excepted = 1560, Paid = 9045 });
-            mont.Add(new MontlyPeyment() { Month = "czerwiec", Excepted = 4700, Paid = 650 });
+            // ToList, ponieważ w SQLLite datay jako stringi i parsowanie w "locie" nie działa,
+            // zatem kopia i użycie dodatkowego pola DateOfPaid.
+            // Na normalnej bazie, zapytanie byłoby łatwiesze (ew. pricedura skłądowana).
+            var allRepements = session.Query<Repayments>().ToList();
+            var allAgrements = session.Query<Agreement>().ToList();
 
+            var repementsInDate = allRepements.Where(p => p.DateOfPaid >= dateReportStart && p.DateOfPaid<=DateTime.Now).OrderBy(o => o.DateOfPaid);
+            var groupPaid = repementsInDate.GroupBy(r => r.DateOfPaid.Month);
+
+
+            // Sumowanie wpłaconych rat
+            foreach ( var group in groupPaid ) 
+            {
+                var sum = group.Sum(s => s.Value);
+                string monthName = DateTimeHelper.MonthName(group.First().DateOfPaid.Month);
+                monthValues.Add(new MontlyPeyment() { Month = monthName, Paid = sum });
+            }
+
+            // Wyliczenie wpłat oczekiwanych
+            // Umowy w obowiązujące w okresie ost.6 miesięcy 
+            // TODO: docelowo warunek na Active=1
+            var agreementsInDate = allAgrements.Where(a => a.DateEndToPaid >= dateReportStart && a.DateStartToPaid <= DateTime.Now).OrderBy(o => o.DateStartToPaid.Month);
+            var groupAgrement = agreementsInDate.GroupBy(g => g.DateStartToPaid.Month);
+            
+            // TODO: Założenie, że rata jest stała.
+            foreach (var group in groupAgrement)
+            {
+                double sum = 0;
+                foreach(var agr in group)
+                {
+                    // Wyliczenie ilości mieisęcy w zakresie raportu:
+
+                    int monthCount = DateTimeHelper.MonthCountBetween(agr.DateStartToPaid, agr.DateEndToPaid, dateReportStart, DateTime.Now); ;
+                    sum += monthCount * agr.Installment;
+                }
+
+                string monthName = DateTimeHelper.MonthName(group.Key);
+                MontlyPeyment mp = monthValues.Where(m => m.Month.Equals(monthName)).FirstOrDefault();
+                if(mp != null ) 
+                {
+                    mp.Excepted = sum; 
+                }
+                else
+                {
+                    monthValues.Add(new MontlyPeyment (){ Month = monthName, Excepted = sum });
+                }
+            }
 
             // Ustaw źródło danych dla serii
-            chartControlMontlyPaid.Series[0].DataSource = mont; // Wpłaty
-            chartControlMontlyPaid.Series[1].DataSource = mont; // Oczekiwane
+            chartControlMontlyPaid.Series[0].DataSource = monthValues; // Wpłaty
+            chartControlMontlyPaid.Series[1].DataSource = monthValues; // Oczekiwane
 
             // Ustaw pola danych
             chartControlMontlyPaid.Series[0].ArgumentDataMember = "Month";
@@ -58,10 +97,6 @@ namespace DevExpressCreditDemo.UI.Modules
             // Ustaw typ serii na słupki
             chartControlMontlyPaid.Series[0].View = new SideBySideBarSeriesView();
             chartControlMontlyPaid.Series[1].View = new SideBySideBarSeriesView();
-
-            // Dostosuj osie
-            //chartControlMontlyPaid.Diagram.AxisX.Title.Text = "Miesiące";
-            //chartControlMontlyPaid.Diagram.AxisY.Title.Text = "Kwota";
 
             // Ustaw etykiety
             chartControlMontlyPaid.Series[0].Label.Visible = true;

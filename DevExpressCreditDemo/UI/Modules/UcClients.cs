@@ -51,7 +51,7 @@ namespace DevExpressCreditDemo.UI.Modules
             DateTime startDate = DateTime.Parse(view.GetRowCellValue(rowHandle, "StartDate").ToString());
             double installment = double.Parse(view.GetRowCellValue(rowHandle, "Installment").ToString());
             double repaid= double.Parse(view.GetRowCellValue(rowHandle, "Repaid").ToString());
-            int cnt = DateTimeHelper.GetMonthDiff(startDate, DateTime.Now);
+            int cnt = DateTimeHelper.MonthCountBetween(startDate, DateTime.Now);
 
             double sum = cnt * installment;
 
