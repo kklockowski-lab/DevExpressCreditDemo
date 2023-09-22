@@ -45,6 +45,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Model\Agreement.cs" />
     <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Repayment.cs" />
     <Compile Include="PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

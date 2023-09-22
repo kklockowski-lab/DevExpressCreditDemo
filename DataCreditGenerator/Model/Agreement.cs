@@ -22,5 +22,6 @@ namespace DataCreditGenerator.Model
 
         public byte[] Attachment { get; set; }
         public bool Active { get; set; }
+        public IList<Repayment> Repayments { get; set; }
     }
 }
