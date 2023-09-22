@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agreements.cs" />
     <Compile Include="Clients.cs" />
     <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Model\Agreement.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Model\Repayment.cs" />
     <Compile Include="Helpers\PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repayments.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResourcesCSV\imiona_meskie.csv" />

@@ -24,12 +24,13 @@ namespace DataCreditGenerator
 
         public Clients(int count)
         {
-            SetListNames("DataCreditGenerator.imiona_meskie.csv", ref _maleFirsNameList);
-            SetListNames("DataCreditGenerator.imiona_zenskie.csv", ref _femaleFirstNameList);
-            SetListNames("DataCreditGenerator.nazwiska_meskie.csv", ref _maleLastNameList);
-            SetListNames("DataCreditGenerator.nazwiska_zenskie.csv", ref _femaleLastNameList);
+            SetListNames("DataCreditGenerator.ResourcesCSV.imiona_meskie.csv", ref _maleFirsNameList);
+            SetListNames("DataCreditGenerator.ResourcesCSV.imiona_zenskie.csv", ref _femaleFirstNameList);
+            SetListNames("DataCreditGenerator.ResourcesCSV.nazwiska_meskie.csv", ref _maleLastNameList);
+            SetListNames("DataCreditGenerator.ResourcesCSV.nazwiska_zenskie.csv", ref _femaleLastNameList);
             _count = count;
         }
+
         /// <summary>
         /// Lista wylosowanych klientów.
         /// </summary>
