@@ -42,7 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="imiona_meskie.csv" />
+    <EmbeddedResource Include="imiona_zenskie.csv" />
+    <EmbeddedResource Include="nazwiska_meskie.csv" />
+    <EmbeddedResource Include="nazwiska_zenskie.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
