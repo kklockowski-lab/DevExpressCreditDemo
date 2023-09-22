@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.mainContainer = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -138,6 +139,7 @@
             this.menuElementAbout.Name = "menuElementAbout";
             this.menuElementAbout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.menuElementAbout.Text = "O programie";
+            this.menuElementAbout.Click += new System.EventHandler(this.menuElementAbout_Click);
             // 
             // menuElementExit
             // 
@@ -166,6 +168,7 @@
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Main.IconOptions.Image")));
             this.Name = "Main";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Credi tDemo";

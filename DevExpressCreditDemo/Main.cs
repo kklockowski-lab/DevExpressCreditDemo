@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DevExpressCreditDemo.Forms;
 using DevExpressCreditDemo.UI.Modules;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,12 @@ namespace DevExpressCreditDemo
         private void ctrStatMonhtlyDiff_Click(object sender, EventArgs e)
         {
             SwitchView(typeof(UcStatMonthlyDiff));
+        }
+
+        private void menuElementAbout_Click(object sender, EventArgs e)
+        {
+            AboutForm af = new AboutForm();
+            af.ShowDialog();
         }
     }
 }
