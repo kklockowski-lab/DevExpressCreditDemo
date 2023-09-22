@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpressCreditDemo", "DevExpressCreditDemo\DevExpressCreditDemo.csproj", "{58BC0AC0-3C9E-487B-889E-08D0F3D9F95D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCreditGenerator", "DataCreditGenerator\DataCreditGenerator.csproj", "{D210C633-BFF4-438D-90ED-E161D45C13B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{58BC0AC0-3C9E-487B-889E-08D0F3D9F95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58BC0AC0-3C9E-487B-889E-08D0F3D9F95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58BC0AC0-3C9E-487B-889E-08D0F3D9F95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D210C633-BFF4-438D-90ED-E161D45C13B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D210C633-BFF4-438D-90ED-E161D45C13B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D210C633-BFF4-438D-90ED-E161D45C13B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D210C633-BFF4-438D-90ED-E161D45C13B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
