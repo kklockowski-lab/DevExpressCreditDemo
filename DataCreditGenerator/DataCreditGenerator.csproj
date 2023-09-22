@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Clients.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Model\Agreement.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
