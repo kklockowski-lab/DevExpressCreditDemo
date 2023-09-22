@@ -1,4 +1,5 @@
-﻿using DevExpress.Skins;
+﻿using DataCreditGenerator;
+using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.Xpo;
 using DevExpressCreditDemo.credit;
@@ -18,6 +19,8 @@ namespace DevExpressCreditDemo
         [STAThread]
         static void Main()
         {
+            Clients c = new Clients(50);
+            var l = c.ClientList();
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
             session.Connect();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
  namespace DataCreditGenerator
 {
-    internal enum Gender
+    public enum Gender
     {
         Male,
         Female
