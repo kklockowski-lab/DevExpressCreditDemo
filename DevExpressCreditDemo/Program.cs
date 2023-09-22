@@ -19,8 +19,8 @@ namespace DevExpressCreditDemo
         [STAThread]
         static void Main()
         {
-            Clients c = new Clients(50);
-            var l = c.ClientList();
+            Clients c = new Clients(5000);
+            var l = c.ClientList(true, new List<string>() { "94011590292" });
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
             session.Connect();

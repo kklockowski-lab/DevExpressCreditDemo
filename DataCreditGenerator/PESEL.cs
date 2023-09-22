@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace DataCreditGenerator
 {
-    internal class Pesel
+    public class Pesel
     {
         private static Random random = new Random();
-        public static string Generate(Gender gender)
+        public static string Generate(Gender? gender=null)
         {
             int year = random.Next(DateTime.Now.AddYears(-68).Year, DateTime.Now.AddYears(-18).Year);     
             int month = random.Next(1, 13);            
             int day = random.Next(1, DateTime.DaysInMonth(year, month) + 1);
             month = year > 1999 ? month + 20 : month;
             int digit = random.Next(1001, 9999);
+
+            if (gender == null)
+            {
+                gender = random.Next(0,2)==1 ? Gender.Male : Gender.Female;
+            }
 
             //Poprawka na płeć.
             if ((gender == Gender.Male && digit % 2 == 0)

@@ -19,10 +19,10 @@ namespace DataCreditGenerator
         private static List<string> _femaleLastNameList = new List<string>();
 
         private IList<Client> result;
-        private int _count;
+        private readonly int _count;
         private static Random rand = new Random();
-        private List<string> peselList = new List<string>();
-        
+        private readonly List<string> peselList = new List<string>();
+
         public Clients(int count)
         {
             SetListNames("DataCreditGenerator.imiona_meskie.csv", ref _maleFirsNameList);
@@ -31,18 +31,31 @@ namespace DataCreditGenerator
             SetListNames("DataCreditGenerator.nazwiska_zenskie.csv", ref _femaleLastNameList);
             _count = count;
         }
-
-        public IList<Client> ClientList(bool forseReGenerate = false)
+        /// <summary>
+        /// Lista wylosowanych klientów.
+        /// </summary>
+        /// <param name="forseReGenerate">true - wylosowanie nowych klientów</param>
+        /// <param name="excludePeselList">lista PESELi, które mają być ominęte w wyniku.</param>
+        /// <returns></returns>
+        public IList<Client> ClientList(bool forseReGenerate = false, IList<string> excludePeselList = null)
         {
 
             if (result is null || forseReGenerate)
             {
                 result = new List<Client>();
             }
+            else if (excludePeselList != null)
+            {
+                result = result.Where(r => !excludePeselList.Contains(r.Pesel)).ToList();
+                return result;
+            }
             else
             {
                 return result;
             }
+
+            if(excludePeselList!=null) peselList.AddRange(excludePeselList);
+
 
             for (int i = 0; i < _count; i++)
             {
@@ -86,6 +99,16 @@ namespace DataCreditGenerator
 
             return result;
 
+        }
+
+        public void ExcludePesels(IList<string> excludePeselList)
+        {
+            peselList.AddRange(excludePeselList);
+
+            if (result != null)
+            {
+                result = result.Where(r => !excludePeselList.Contains(r.Pesel)).ToList();
+            }
         }
 
         private void SetListNames(string csvFile, ref List<string> list)
