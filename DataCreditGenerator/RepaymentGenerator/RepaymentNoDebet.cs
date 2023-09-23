@@ -6,30 +6,39 @@ namespace DataCreditGenerator.RepaymentGenerator
 {
     public class RepaymentNoDebet : IRepaymentListGenerator
     {
-        public IList<Repayment> GeneratePayments(Agreement agreement)
+        private readonly Agreement _agrement;
+
+        public RepaymentNoDebet(Agreement agrement)
         {
-            IList<Repayment> res = new List<Repayment>();
+            _agrement = agrement;
+        }
 
-            DateTime startDate = agreement.StartDate;
-            DateTime date = new DateTime(startDate.Year, startDate.Month, (int)agreement.DayOfPement);
-            DateTime endDate = DateTime.Now;
+        public IList<Repayment> GeneratePayments
+        {
+            get
 
-            int mountDebet = 0;
-
-
-            for (int i = 0; date < DateTime.Now; ++i)
             {
-                date = date.AddMonths(i);
-                Repayment rep = new Repayment()
+                IList<Repayment> res = new List<Repayment>();
+
+                DateTime startDate = _agrement.StartDate;
+                DateTime date = new DateTime(startDate.Year, startDate.Month, _agrement.DayOfPement);
+                DateTime endDate = DateTime.Now;
+
+
+                for (int i = 0; date < DateTime.Now; ++i)
                 {
-                    Value = agreement.Installment,
-                    Date = date
-                };
-                res.Add(rep);
+                    date = date.AddMonths(i);
+                    Repayment rep = new Repayment()
+                    {
+                        Value = _agrement.Installment,
+                        Date = date
+                    };
+                    res.Add(rep);
+                }
+
+
+                return res;
             }
-
-
-            return res;
         }
     }
 }

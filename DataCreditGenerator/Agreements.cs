@@ -46,13 +46,30 @@ namespace DataCreditGenerator
                     EndDate = endDate,
                     Active = random.Next(1, 101) < _settings.ProbabilityOfActivAgreement
                 };
-                IRepaymentListGenerator generator = new RepaymentNoDebet();
+
+                IRepaymentListGenerator generator = SelectGenerator(agreement);
                 Repayments repayments = new Repayments(generator);
                 agreement.Repayments = repayments.RepeymentList();
                 result.Add(agreement);                
             }
 
             return result;
+        }
+
+        private IRepaymentListGenerator SelectGenerator(Agreement agreement)
+        {
+            switch (_settings.RepaymentGenerator)
+            {
+                case Heleprs.ERepaymentGenerator.DebetAfterDate:
+                    return new RepaymentNoDebet(agreement);
+                case Heleprs.ERepaymentGenerator.DebetNoPaid:
+                    return new RepaymentNoDebet(agreement);
+                case Heleprs.ERepaymentGenerator.Combain:
+                    return new RepaymentNoDebet(agreement);
+                case Heleprs.ERepaymentGenerator.TotalRandom:
+                    return new RepaymentNoDebet(agreement);
+                default: return new RepaymentNoDebet(agreement);
+            }
         }
     }
 }

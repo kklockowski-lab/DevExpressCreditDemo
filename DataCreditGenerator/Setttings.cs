@@ -49,6 +49,17 @@ namespace DataCreditGenerator
         /// </summary>
         public int MaxPercent { get; set; } = 60;
 
+
+        /// <summary>
+        /// Minimalna ilość rat.
+        /// </summary>
+        public int MinInstallmentCount { get; set; } = 40;
+
+        /// <summary>
+        /// Maksymalna ilość rat.
+        /// </summary>
+        public int MaxInstallmentCount { get; set; } = 60;
+
         /// <summary>
         /// Typ losowania płatności.
         /// </summary>

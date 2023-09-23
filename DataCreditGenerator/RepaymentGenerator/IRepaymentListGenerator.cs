@@ -13,6 +13,6 @@ namespace DataCreditGenerator.RepaymentGenerator
     /// </summary>
     public interface IRepaymentListGenerator
     {
-        IList<Repayment> GeneratePayments(Agreement agreement);
+        IList<Repayment> GeneratePayments { get; }
     }
 }

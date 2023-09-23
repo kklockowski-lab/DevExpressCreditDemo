@@ -23,7 +23,7 @@ namespace DataCreditGenerator
             else
                 return result;
 
-            return _generator.GeneratePayments(agreement);
+            return _generator.GeneratePayments;
 
         }
     }
