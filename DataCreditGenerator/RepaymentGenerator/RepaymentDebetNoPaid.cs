@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace DataCreditGenerator.RepaymentGenerator
 {
+    /// <summary>
+    /// Generowanie listy płatności, zadłużenie wynikające z braku płatności rat. 
+    /// </summary>
     public class RepaymentDebetNoPaid : BaseRepaymentGenerator, IRepaymentListGenerator
     {
         public RepaymentDebetNoPaid(Agreement agrement) : base(agrement) { }

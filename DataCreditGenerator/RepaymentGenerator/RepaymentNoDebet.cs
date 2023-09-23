@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 namespace DataCreditGenerator.RepaymentGenerator
 {
+    /// <summary>
+    /// Generowanie listy płatności, tak aby nie występowało zadłużenie. 
+    /// Czyli płatność od początku spłąty do bieżącego miesiąca i wyskość wpłaty zgodna z ratą.
+    /// </summary>
     public class RepaymentNoDebet : BaseRepaymentGenerator, IRepaymentListGenerator
     {
         public RepaymentNoDebet(Agreement agrement) : base(agrement) { }

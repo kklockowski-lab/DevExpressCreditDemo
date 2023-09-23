@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace DataCreditGenerator.RepaymentGenerator
 {
+    /// <summary>
+    /// Generowanie listy płatności, wygenerowanie zadłużenia bo spłata później niż dzień wpłąty.
+    /// </summary>
     public class RepaymentDebetAfterDate : BaseRepaymentGenerator, IRepaymentListGenerator
     {
         public RepaymentDebetAfterDate(Agreement agrement) : base(agrement) { }
@@ -11,7 +14,6 @@ namespace DataCreditGenerator.RepaymentGenerator
         public IList<Repayment> GeneratePayments
         {
             get
-
             {
                 IList<Repayment> res = new List<Repayment>();
 

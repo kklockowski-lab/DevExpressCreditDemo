@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 namespace DataCreditGenerator.RepaymentGenerator
 {
+    /// <summary>
+    /// Generowanie listy płatności, zadłużernie wynikajća z braku płątności i płatności po terminie.
+    /// </summary>
     public class RepaymentDebetCombain : BaseRepaymentGenerator, IRepaymentListGenerator
     {
-
-
         public RepaymentDebetCombain(Agreement agrement) : base(agrement) { }
 
         public IList<Repayment> GeneratePayments
