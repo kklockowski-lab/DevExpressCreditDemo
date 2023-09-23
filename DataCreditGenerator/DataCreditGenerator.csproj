@@ -52,7 +52,7 @@
     <Compile Include="Helpers\PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepaymentGenerator\RepaymentDebetCombain.cs" />
-    <Compile Include="RepaymentGenerator\RepaymentDebetNoPaid.cs" />
+    <Compile Include="RepaymentGenerator\RepaymentDebetPaidLess.cs" />
     <Compile Include="RepaymentGenerator\RepaymentDebetAfterDate.cs" />
     <Compile Include="RepaymentGenerator\RepaymentNoDebet.cs" />
     <Compile Include="Repayments.cs" />

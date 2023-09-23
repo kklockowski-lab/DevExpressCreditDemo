@@ -1,4 +1,5 @@
 ﻿using DataCreditGenerator.Model;
+using GeneralHelpers;
 using System;
 using System.Collections.Generic;
 
@@ -19,10 +20,10 @@ namespace DataCreditGenerator.RepaymentGenerator
 
                 DateTime startDate = _agrement.StartDate;
                 DateTime date = new DateTime(startDate.Year, startDate.Month, _agrement.DayOfPement);
-                DateTime endDate = DateTime.Now;
 
+                int mountDebet = random.Next(1, DateTimeHelper.MonthCountBetween(date, DateTime.Now));
 
-                for (int i = 0; date < DateTime.Now; ++i)
+                for (int i = 0; date < DateTime.Now.AddMonths(-1* mountDebet); ++i)
                 {
                     date = date.AddMonths(i);
                     Repayment rep = new Repayment()

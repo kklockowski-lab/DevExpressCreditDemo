@@ -14,7 +14,6 @@ namespace DataCreditGenerator.RepaymentGenerator
         public IList<Repayment> GeneratePayments
         {
             get
-
             {
                 IList<Repayment> res = new List<Repayment>();
 

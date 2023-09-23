@@ -75,7 +75,7 @@ namespace DataCreditGenerator
             {
                 case Heleprs.ERepaymentGenerator.DebetAfterDate:
                     return new RepaymentNoDebet(agreement);
-                case Heleprs.ERepaymentGenerator.DebetNoPaid:
+                case Heleprs.ERepaymentGenerator.DebetPaidLess:
                     return new RepaymentNoDebet(agreement);
                 case Heleprs.ERepaymentGenerator.Combain:
                     return new RepaymentNoDebet(agreement);

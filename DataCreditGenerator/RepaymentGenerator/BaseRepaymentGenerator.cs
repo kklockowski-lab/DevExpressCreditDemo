@@ -14,6 +14,7 @@ namespace DataCreditGenerator.RepaymentGenerator
     public class BaseRepaymentGenerator
     {
         protected readonly Agreement _agrement;
+        protected static readonly Random random = new Random();
         public BaseRepaymentGenerator(Agreement agrement)
         {
             _agrement = agrement;

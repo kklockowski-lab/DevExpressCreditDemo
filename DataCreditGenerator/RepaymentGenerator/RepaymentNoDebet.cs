@@ -21,8 +21,6 @@ namespace DataCreditGenerator.RepaymentGenerator
 
                 DateTime startDate = _agrement.StartDate;
                 DateTime date = new DateTime(startDate.Year, startDate.Month, _agrement.DayOfPement);
-                DateTime endDate = DateTime.Now;
-
 
                 for (int i = 0; date < DateTime.Now; ++i)
                 {
