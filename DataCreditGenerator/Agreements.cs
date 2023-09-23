@@ -11,6 +11,8 @@ namespace DataCreditGenerator
         private IList<Agreement> result;
         public  IList<Agreement> AgreementList(IList<Client> clients)
         {
+            if(result is null) result = new List<Agreement>();
+            else return result;
 
             foreach (var client in clients)
             {
