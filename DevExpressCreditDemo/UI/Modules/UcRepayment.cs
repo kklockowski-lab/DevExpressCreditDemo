@@ -15,9 +15,9 @@ using System.Windows.Forms;
 
 namespace DevExpressCreditDemo.UI.Modules
 {
-    public partial class UcRepeyment : DevExpress.XtraEditors.XtraUserControl
+    public partial class UcRepayment : DevExpress.XtraEditors.XtraUserControl
     {
-        public UcRepeyment()
+        public UcRepayment()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace DevExpressCreditDemo.UI.Modules
         {
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;
             Session session = new Session(dataLayer);
-            gridControlRepeyment.DataSource = session.Query<VM_RepementClients>();
+            gridControlRepeyment.DataSource = session.Query<View_ClientRepayments>();
         }
 
         private void gridViewRepeyment_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

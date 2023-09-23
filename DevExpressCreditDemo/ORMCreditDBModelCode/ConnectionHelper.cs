@@ -20,8 +20,9 @@ namespace DevExpressCreditDemo.credit
         static Type[] persistentTypes = new Type[] {
             typeof(Agreement),
             typeof(Client),
-            typeof(Repayments),
-            typeof(User)
+            typeof(User),
+            typeof(Repayment),
+            typeof(SystemRole)
         };
         public static Type[] GetPersistentTypes()
         {

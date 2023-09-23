@@ -31,7 +31,7 @@ namespace DevExpressCreditDemo.UI.Modules
             // ToList, ponieważ w SQLLite datay jako stringi i parsowanie w "locie" nie działa,
             // zatem kopia i użycie dodatkowego pola DateOfPaid.
             // Na normalnej bazie, zapytanie byłoby łatwiesze (ew. pricedura skłądowana).
-            var allRepements = session.Query<Repayments>().ToList();
+            var allRepements = session.Query<Repayment>().ToList();
             var allAgrements = session.Query<Agreement>().ToList();
 
             var repementsInDate = allRepements.Where(p => p.DateOfPaid >= dateReportStart && p.DateOfPaid<=DateTime.Now).OrderBy(o => o.DateOfPaid);

@@ -93,11 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BizModel\MontlyPeyment.cs" />
-    <Compile Include="DataGenerator\Enums.cs" />
-    <Compile Include="DataGenerator\PESEL.cs" />
-    <Compile Include="DataGenerator\RandomedAgreement.cs" />
-    <Compile Include="DataGenerator\RandomedPerson.cs" />
-    <Compile Include="DataGenerator\RandomedPeyment.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.Designer.cs">
       <DependentUpon>Agreement.cs</DependentUpon>
@@ -107,16 +102,20 @@
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
     <Compile Include="ORMCreditDBModelCode\ConnectionHelper.cs" />
-    <Compile Include="ORMCreditDBModelCode\Repayments.cs" />
-    <Compile Include="ORMCreditDBModelCode\Repayments.Designer.cs">
-      <DependentUpon>Repayments.cs</DependentUpon>
+    <Compile Include="ORMCreditDBModelCode\Repayment.cs" />
+    <Compile Include="ORMCreditDBModelCode\Repayment.Designer.cs">
+      <DependentUpon>Repayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMCreditDBModelCode\SystemRole.cs" />
+    <Compile Include="ORMCreditDBModelCode\SystemRole.Designer.cs">
+      <DependentUpon>SystemRole.cs</DependentUpon>
     </Compile>
     <Compile Include="ORMCreditDBModelCode\User.cs" />
     <Compile Include="ORMCreditDBModelCode\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="ORMCreditDBModelCode\VM_RepementClients.cs" />
-    <Compile Include="ORMCreditDBModelCode\VM_REPAID_BY_AGREEMENT.cs" />
+    <Compile Include="ORMCreditDBModelCode\View_ClientRepayments.cs" />
+    <Compile Include="ORMCreditDBModelCode\View_RepaymentSumByAgreement.cs" />
     <Compile Include="UI\Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,11 +151,11 @@
     <Compile Include="UI\Modules\UcClients.Designer.cs">
       <DependentUpon>UcClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Modules\UcRepeyment.cs">
+    <Compile Include="UI\Modules\UcRepayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Modules\UcRepeyment.Designer.cs">
-      <DependentUpon>UcRepeyment.cs</DependentUpon>
+    <Compile Include="UI\Modules\UcRepayment.Designer.cs">
+      <DependentUpon>UcRepayment.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Modules\UcStatMonthlyDiff.cs">
       <SubType>UserControl</SubType>
@@ -187,8 +186,8 @@
     <EmbeddedResource Include="UI\Modules\UcClients.resx">
       <DependentUpon>UcClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcRepeyment.resx">
-      <DependentUpon>UcRepeyment.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Modules\UcRepayment.resx">
+      <DependentUpon>UcRepayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcStatMonthlyDiff.resx">
       <DependentUpon>UcStatMonthlyDiff.cs</DependentUpon>

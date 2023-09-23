@@ -19,25 +19,32 @@ namespace DevExpressCreditDemo.credit
     public partial class User : XPLiteObject
     {
         long fID;
-        [Key]
+        [Key(true)]
         public long ID
         {
             get { return fID; }
             set { SetPropertyValue<long>(nameof(ID), ref fID, value); }
         }
-        string fName;
-        [Size(SizeAttribute.Unlimited)]
-        public string Name
+        SystemRole fIDRole;
+        [Association(@"UserReferencesSystemRole")]
+        public SystemRole IDRole
         {
-            get { return fName; }
-            set { SetPropertyValue<string>(nameof(Name), ref fName, value); }
+            get { return fIDRole; }
+            set { SetPropertyValue<SystemRole>(nameof(IDRole), ref fIDRole, value); }
         }
-        string fFullName;
+        string fFirstName;
         [Size(SizeAttribute.Unlimited)]
-        public string FullName
+        public string FirstName
         {
-            get { return fFullName; }
-            set { SetPropertyValue<string>(nameof(FullName), ref fFullName, value); }
+            get { return fFirstName; }
+            set { SetPropertyValue<string>(nameof(FirstName), ref fFirstName, value); }
+        }
+        string fLastName;
+        [Size(SizeAttribute.Unlimited)]
+        public string LastName
+        {
+            get { return fLastName; }
+            set { SetPropertyValue<string>(nameof(LastName), ref fLastName, value); }
         }
         string fLogin;
         [Indexed(Name = @"sqlite_autoindex_User_1", Unique = true)]
@@ -54,6 +61,10 @@ namespace DevExpressCreditDemo.credit
             get { return fHashPass; }
             set { SetPropertyValue<string>(nameof(HashPass), ref fHashPass, value); }
         }
+        [Association(@"ClientReferencesUser")]
+        public XPCollection<Client> Clients { get { return GetCollection<Client>(nameof(Clients)); } }
+        [Association(@"AgreementReferencesUser")]
+        public XPCollection<Agreement> Agreements { get { return GetCollection<Agreement>(nameof(Agreements)); } }
     }
 
 }

@@ -21,7 +21,7 @@ namespace DevExpressCreditDemo.UI.Modules
             Session session = new Session(dataLayer);
          
             // TODO: Póki co założenie, że jeden klient ma jedną umowę!
-            gridControlClients.DataSource = session.Query<VM_REPAID_BY_AGREEMENT>();
+            gridControlClients.DataSource = session.Query<View_RepaymentSumByAgreement>();
         }
 
         private void gridViewClients_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

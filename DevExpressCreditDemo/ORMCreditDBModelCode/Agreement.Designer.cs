@@ -19,14 +19,21 @@ namespace DevExpressCreditDemo.credit
     public partial class Agreement : XPLiteObject
     {
         long fID;
-        [Key]
+        [Key(true)]
         public long ID
         {
             get { return fID; }
             set { SetPropertyValue<long>(nameof(ID), ref fID, value); }
         }
+        User fIDUser;
+        [ColumnDbDefaultValue("1")]
+        [Association(@"AgreementReferencesUser")]
+        public User IDUser
+        {
+            get { return fIDUser; }
+            set { SetPropertyValue<User>(nameof(IDUser), ref fIDUser, value); }
+        }
         Client fIDClient;
-        [Indexed(Name = @"iIDClient_Agreement")]
         [Association(@"AgreementReferencesClient")]
         public Client IDClient
         {
@@ -91,8 +98,8 @@ namespace DevExpressCreditDemo.credit
             get { return fDayOfPement; }
             set { SetPropertyValue<long>(nameof(DayOfPement), ref fDayOfPement, value); }
         }
-        [Association(@"RepaymentsReferencesAgreement")]
-        public XPCollection<Repayments> RepaymentsCollection { get { return GetCollection<Repayments>(nameof(RepaymentsCollection)); } }
+        [Association(@"RepaymentReferencesAgreement")]
+        public XPCollection<Repayment> Repayments { get { return GetCollection<Repayment>(nameof(Repayments)); } }
 
         /// <summary>
         /// Data pierwszej wpłaty
@@ -119,7 +126,7 @@ namespace DevExpressCreditDemo.credit
         }
 
         public double PercentAsDouble { get { return (double)fPercent / 100; } }
+
     }
+
 }
-
-

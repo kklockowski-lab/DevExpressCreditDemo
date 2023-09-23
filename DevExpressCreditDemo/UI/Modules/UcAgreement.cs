@@ -45,7 +45,7 @@ namespace DevExpressCreditDemo.UI.Modules
                                             DayOfPement = agreement.DayOfPement,
                                         };
 
-            gridControlAgreement.DataSource = agreementsWithClients;// session.Query<Agreement>();
+            gridControlAgreement.DataSource = agreementsWithClients;
         }
 
         private void gridViewAgrement_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

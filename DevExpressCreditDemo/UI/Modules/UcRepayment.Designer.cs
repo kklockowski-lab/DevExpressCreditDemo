@@ -1,6 +1,6 @@
 ﻿namespace DevExpressCreditDemo.UI.Modules
 {
-    partial class UcRepeyment
+    partial class UcRepayment
     {
         /// <summary> 
         /// Required designer variable.

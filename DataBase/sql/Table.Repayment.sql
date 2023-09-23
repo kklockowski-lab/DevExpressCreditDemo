@@ -1,0 +1,8 @@
+CREATE TABLE "Repayment" (
+	"ID"	INTEGER NOT NULL,
+	"IDAgreement"	INTEGER NOT NULL,
+	"Date"	TEXT NOT NULL,
+	"Value"	REAL NOT NULL,
+	FOREIGN KEY("IDAgreement") REFERENCES "Agreement"("ID"),
+	PRIMARY KEY("ID" AUTOINCREMENT)
+)

@@ -8,9 +8,9 @@ using System.Reflection;
 namespace DevExpressCreditDemo.credit
 {
 
-    public partial class Repayments
+    public partial class SystemRole
     {
-        public Repayments(Session session) : base(session) { }
+        public SystemRole(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 

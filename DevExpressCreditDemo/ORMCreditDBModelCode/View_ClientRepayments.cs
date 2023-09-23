@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DevExpressCreditDemo.ORMCreditDBModelCode
 {
-    [Persistent("VM_RepementClients")]
-    public class VM_RepementClients : XPLiteObject
+    [Persistent("View_ClientRepayments")]
+    public class View_ClientRepayments : XPLiteObject
     {
-        public VM_RepementClients(Session session) : base(session) { }
+        public View_ClientRepayments(Session session) : base(session) { }
 
         [Key]
         public long ID { get; set; }

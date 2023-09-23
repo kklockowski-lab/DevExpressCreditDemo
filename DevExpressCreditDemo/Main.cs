@@ -48,7 +48,7 @@ namespace DevExpressCreditDemo
             mainContainer.SuspendLayout();
             UcClients clients = new UcClients();
             UcAgreement agreement = new UcAgreement();
-            UcRepeyment repeyment = new UcRepeyment();
+            UcRepayment repeyment = new UcRepayment();
             UcStatMonthlyDiff statMonthlyDiff = new UcStatMonthlyDiff();
 
             clients.Dock = DockStyle.Fill;
@@ -107,7 +107,7 @@ namespace DevExpressCreditDemo
 
         private void ctrPeyemnts_Click(object sender, EventArgs e)
         {
-            SwitchView(typeof(UcRepeyment));
+            SwitchView(typeof(UcRepayment));
         }
 
         private void ctrStatMonhtlyDiff_Click(object sender, EventArgs e)

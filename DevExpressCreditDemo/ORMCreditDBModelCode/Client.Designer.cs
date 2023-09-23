@@ -19,11 +19,19 @@ namespace DevExpressCreditDemo.credit
     public partial class Client : XPLiteObject
     {
         long fID;
-        [Key]
+        [Key(true)]
         public long ID
         {
             get { return fID; }
             set { SetPropertyValue<long>(nameof(ID), ref fID, value); }
+        }
+        User fIDUser;
+        [ColumnDbDefaultValue("1")]
+        [Association(@"ClientReferencesUser")]
+        public User IDUser
+        {
+            get { return fIDUser; }
+            set { SetPropertyValue<User>(nameof(IDUser), ref fIDUser, value); }
         }
         string fFirstName;
         [Size(SizeAttribute.Unlimited)]
@@ -32,12 +40,11 @@ namespace DevExpressCreditDemo.credit
             get { return fFirstName; }
             set { SetPropertyValue<string>(nameof(FirstName), ref fFirstName, value); }
         }
-        string fLastName;
-        [Size(SizeAttribute.Unlimited)]
-        public string LastName
+        long fLastName;
+        public long LastName
         {
             get { return fLastName; }
-            set { SetPropertyValue<string>(nameof(LastName), ref fLastName, value); }
+            set { SetPropertyValue<long>(nameof(LastName), ref fLastName, value); }
         }
         string fPESEL;
         [Indexed(Name = @"sqlite_autoindex_Client_1", Unique = true)]
@@ -46,6 +53,18 @@ namespace DevExpressCreditDemo.credit
         {
             get { return fPESEL; }
             set { SetPropertyValue<string>(nameof(PESEL), ref fPESEL, value); }
+        }
+        long fPhone;
+        public long Phone
+        {
+            get { return fPhone; }
+            set { SetPropertyValue<long>(nameof(Phone), ref fPhone, value); }
+        }
+        long fEmail;
+        public long Email
+        {
+            get { return fEmail; }
+            set { SetPropertyValue<long>(nameof(Email), ref fEmail, value); }
         }
         long fActive;
         public long Active

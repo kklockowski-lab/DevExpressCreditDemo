@@ -32,7 +32,6 @@ namespace DataCreditGenerator.RepaymentGenerator
                     res.Add(rep);
                 }
 
-
                 return res;
             }
         }

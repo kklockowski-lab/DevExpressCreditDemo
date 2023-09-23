@@ -16,37 +16,31 @@ using System.Reflection;
 namespace DevExpressCreditDemo.credit
 {
 
-    public partial class Repayments : XPLiteObject
+    public partial class SystemRole : XPLiteObject
     {
         long fID;
-        [Key]
+        [Key(true)]
         public long ID
         {
             get { return fID; }
             set { SetPropertyValue<long>(nameof(ID), ref fID, value); }
         }
-        Agreement fIDAgreement;
-        [Association(@"RepaymentsReferencesAgreement")]
-        public Agreement IDAgreement
-        {
-            get { return fIDAgreement; }
-            set { SetPropertyValue<Agreement>(nameof(IDAgreement), ref fIDAgreement, value); }
-        }
-        string fDate;
+        string fName;
         [Size(SizeAttribute.Unlimited)]
-        public string Date
+        public string Name
         {
-            get { return fDate; }
-            set { SetPropertyValue<string>(nameof(Date), ref fDate, value); }
+            get { return fName; }
+            set { SetPropertyValue<string>(nameof(Name), ref fName, value); }
         }
-        double fValue;
-        public double Value
+        string fDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string Description
         {
-            get { return fValue; }
-            set { SetPropertyValue<double>(nameof(Value), ref fValue, value); }
+            get { return fDescription; }
+            set { SetPropertyValue<string>(nameof(Description), ref fDescription, value); }
         }
-
-        public DateTime DateOfPaid { get { return DateTime.Parse(fDate); } }
+        [Association(@"UserReferencesSystemRole")]
+        public XPCollection<User> Users { get { return GetCollection<User>(nameof(Users)); } }
     }
 
 }
