@@ -19,7 +19,7 @@ namespace DataCreditGenerator
                 int installmentCount = random.Next(6, 60);
                 double installment = Math.Round(amount * (1 + (double)percent / 100) / installmentCount, 4);
                 DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                startDate = DateTime.Now.AddMonths(-1 * random.Next(1, installmentCount - 1));
+                startDate = startDate.AddMonths(-1 * random.Next(1, installmentCount - 1));
                 startDate = startDate.AddDays(random.Next(0, DateTime.DaysInMonth(startDate.Year, startDate.Month) - 1));
 
                 DateTime endDate = startDate.AddMonths(installmentCount);
