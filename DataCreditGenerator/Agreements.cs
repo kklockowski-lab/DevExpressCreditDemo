@@ -74,11 +74,13 @@ namespace DataCreditGenerator
             switch (switchValue)
             {
                 case Heleprs.ERepaymentGenerator.DebetAfterDate:
-                    return new RepaymentNoDebet(agreement);
+                    return new RepaymentDebetAfterDate(agreement);
                 case Heleprs.ERepaymentGenerator.DebetPaidLess:
-                    return new RepaymentNoDebet(agreement);
+                    return new RepaymentDebetPaidLess(agreement);
                 case Heleprs.ERepaymentGenerator.Combain:
-                    return new RepaymentNoDebet(agreement);
+                    return new RepaymentDebetCombain(agreement);
+                case ERepaymentGenerator.DebetNoPaidLastMonth:
+                    return new RepaymentDebetNoPaidLastMonth(agreement);
                 case Heleprs.ERepaymentGenerator.TotalRandom:
                     {
                         ERepaymentGenerator selectedOption = ERepaymentGenerator.TotalRandom;

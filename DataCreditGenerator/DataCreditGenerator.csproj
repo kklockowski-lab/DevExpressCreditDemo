@@ -51,6 +51,7 @@
     <Compile Include="Model\Repayment.cs" />
     <Compile Include="Helpers\PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepaymentGenerator\RepaymentDebetNoPaidLastMonth.cs" />
     <Compile Include="RepaymentGenerator\RepaymentDebetCombain.cs" />
     <Compile Include="RepaymentGenerator\RepaymentDebetPaidLess.cs" />
     <Compile Include="RepaymentGenerator\RepaymentDebetAfterDate.cs" />

@@ -16,6 +16,7 @@ using System.Threading.Tasks;
         {
         NoDebet,
         DebetAfterDate,
+        DebetNoPaidLastMonth,
         DebetPaidLess,
         Combain,
         TotalRandom
