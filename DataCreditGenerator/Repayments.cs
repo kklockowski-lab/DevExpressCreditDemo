@@ -37,7 +37,7 @@ namespace DataCreditGenerator
             if (isDebet)
             {
                 mountDebet = random.Next(1, DateTimeHelper.MonthCountBetween(date, DateTime.Now));
-                endDate = endDate.AddDays(mountDebet);
+                endDate = endDate.AddDays(-1*mountDebet);
             }
 
 

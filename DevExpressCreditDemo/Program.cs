@@ -19,7 +19,7 @@ namespace DevExpressCreditDemo
         [STAThread]
         static void Main()
         {
-            Clients c = new Clients(5000);
+            Clients c = new Clients();
             var l = c.ClientList(true, new List<string>() { "94011590292" });
             
             Agreements agr = new Agreements();

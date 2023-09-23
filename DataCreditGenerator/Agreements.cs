@@ -8,7 +8,14 @@ namespace DataCreditGenerator
     {
         private static Random random = new Random();
 
+        private readonly Setttings _settings;
         private IList<Agreement> result;
+
+        public Agreements(Setttings settings = null)
+        {
+            if (settings is null) _settings = new Setttings();
+            _settings = settings;
+        }
         public  IList<Agreement> AgreementList(IList<Client> clients)
         {
             if(result is null) result = new List<Agreement>();
@@ -16,8 +23,8 @@ namespace DataCreditGenerator
 
             foreach (var client in clients)
             {
-                double amount = random.Next(500, 50000);
-                int percent = random.Next(40, 60);
+                double amount = random.Next(_settings.MinAmount, _settings.MaxAmount);
+                int percent = random.Next(_settings.MinPercent, _settings.MaxPercent + 1);
                 int installmentCount = random.Next(6, 60);
                 double installment = Math.Round(amount * (1 + (double)percent / 100) / installmentCount, 4);
                 DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
@@ -25,7 +32,7 @@ namespace DataCreditGenerator
                 startDate = startDate.AddDays(random.Next(0, DateTime.DaysInMonth(startDate.Year, startDate.Month) - 1));
 
                 DateTime endDate = startDate.AddMonths(installmentCount);
-                int dayOfPement = random.Next(1, 30);
+                int dayOfPement = random.Next(1, 29); //Dla bezpieczeństwa gdyby wypadł luty (28 dni)
 
                 Agreement agreement = new Agreement()
                 {
@@ -36,9 +43,10 @@ namespace DataCreditGenerator
                     IinstallmentCount = installmentCount,
                     StartDate = startDate,
                     EndDate = endDate,
-                    Active = random.Next(1, 100) < 80 
+                    Active = random.Next(1, 101) < _settings.ProbabilityOfActivAgreement
                 };
-
+                Repayments repayments = new Repayments();
+                agreement.Repayments = repayments.RepeymentList(agreement);
                 result.Add(agreement);                
             }
 

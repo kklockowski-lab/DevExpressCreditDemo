@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using DataCreditGenerator.Heleprs;
+using System.Runtime;
 
 namespace DataCreditGenerator
 {
@@ -18,17 +19,19 @@ namespace DataCreditGenerator
         private static List<string> _femaleLastNameList = new List<string>();
 
         private IList<Client> result;
-        private readonly int _count;
         private static Random rand = new Random();
         private readonly List<string> peselList = new List<string>();
 
-        public Clients(int count)
+        private readonly Setttings _settings;
+        public Clients(Setttings settings = null)
         {
             SetListNames("DataCreditGenerator.ResourcesCSV.imiona_meskie.csv", ref _maleFirsNameList);
             SetListNames("DataCreditGenerator.ResourcesCSV.imiona_zenskie.csv", ref _femaleFirstNameList);
             SetListNames("DataCreditGenerator.ResourcesCSV.nazwiska_meskie.csv", ref _maleLastNameList);
             SetListNames("DataCreditGenerator.ResourcesCSV.nazwiska_zenskie.csv", ref _femaleLastNameList);
-            _count = count;
+
+            if (settings is null) _settings = new Setttings();
+            _settings = settings;
         }
 
         /// <summary>
@@ -54,13 +57,13 @@ namespace DataCreditGenerator
                 return result;
             }
 
-            if(excludePeselList!=null) peselList.AddRange(excludePeselList);
+            if (excludePeselList != null) peselList.AddRange(excludePeselList);
 
 
-            for (int i = 0; i < _count; i++)
+            for (int i = 0; i < _settings.ClientCount; i++)
             {
                 Gender gender = rand.Next(0, 1) == 1 ? Gender.Female : Gender.Male;
-                bool active = rand.Next(1, 100) < 80;
+                bool active = rand.Next(1, 101) < _settings.ProbabilityOfActivClient;
 
                 string pesel = Pesel.Generate(gender);
                 while (peselList.Contains(pesel))
@@ -100,17 +103,6 @@ namespace DataCreditGenerator
             return result;
 
         }
-
-        public void ExcludePesels(IList<string> excludePeselList)
-        {
-            peselList.AddRange(excludePeselList);
-
-            if (result != null)
-            {
-                result = result.Where(r => !excludePeselList.Contains(r.Pesel)).ToList();
-            }
-        }
-
         private void SetListNames(string csvFile, ref List<string> list)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
