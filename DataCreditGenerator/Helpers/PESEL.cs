@@ -9,7 +9,7 @@ namespace DataCreditGenerator.Heleprs
     public class Pesel
     {
         private static Random random = new Random();
-        public static string Generate(Gender? gender=null)
+        public static string Generate(EGender? gender=null)
         {
             int year = random.Next(DateTime.Now.AddYears(-68).Year, DateTime.Now.AddYears(-18).Year);     
             int month = random.Next(1, 13);            
@@ -19,13 +19,13 @@ namespace DataCreditGenerator.Heleprs
 
             if (gender == null)
             {
-                gender = random.Next(0,2)==1 ? Gender.Male : Gender.Female;
+                gender = random.Next(0,2)==1 ? EGender.Male : EGender.Female;
             }
 
             //Poprawka na płeć.
-            if ((gender == Gender.Male && digit % 2 == 0)
+            if ((gender == EGender.Male && digit % 2 == 0)
                 ||
-                (gender == Gender.Female && digit % 2 == 1))
+                (gender == EGender.Female && digit % 2 == 1))
                 digit = digit - 1;
 
             int[] weight = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };

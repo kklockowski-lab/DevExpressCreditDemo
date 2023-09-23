@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
  namespace DataCreditGenerator.Heleprs
 {
-    public enum Gender
+    public enum EGender
     {
         Male,
         Female
+    }
+
+    public enum ERepaymentGenerator
+        {
+        NoDebet,
+        DebetAfterDate,
+        DebetNoPaid,
+        Combain,
+        TotalRandom
     }
 }

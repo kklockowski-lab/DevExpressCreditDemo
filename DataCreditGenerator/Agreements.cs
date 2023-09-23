@@ -1,4 +1,5 @@
 ﻿using DataCreditGenerator.Model;
+using DataCreditGenerator.RepaymentGenerator;
 using System.Collections.Generic;
 using System;
 
@@ -45,8 +46,9 @@ namespace DataCreditGenerator
                     EndDate = endDate,
                     Active = random.Next(1, 101) < _settings.ProbabilityOfActivAgreement
                 };
-                Repayments repayments = new Repayments();
-                agreement.Repayments = repayments.RepeymentList(agreement);
+                IRepaymentListGenerator generator = new RepaymentNoDebet();
+                Repayments repayments = new Repayments(generator);
+                agreement.Repayments = repayments.RepeymentList();
                 result.Add(agreement);                
             }
 

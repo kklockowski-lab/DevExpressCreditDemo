@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataCreditGenerator.Heleprs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,5 +48,10 @@ namespace DataCreditGenerator
         /// Maksymalny procent kredytu.
         /// </summary>
         public int MaxPercent { get; set; } = 60;
+
+        /// <summary>
+        /// Typ losowania płatności.
+        /// </summary>
+        public ERepaymentGenerator RepaymentGenerator { get; set; } = ERepaymentGenerator.TotalRandom;
     }
 }
