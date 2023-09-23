@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using DataCreditGenerator.Heleprs;
 using System.Runtime;
+using GeneralHelpers;
 
 namespace DataCreditGenerator
 {
@@ -92,7 +93,7 @@ namespace DataCreditGenerator
                     Gender = gender,
                     Pesel = pesel,
                     Active = active,
-                    Email = $"{firstName.Replace(" ", "_")}.{lastName.Replace(" ", "_")}@{mailHosts[rand.Next(0, mailHosts.Count)]}",
+                    Email = $"{StringHelper.ToSnakeCase(firstName)}.{StringHelper.ToSnakeCase(lastName)}@{mailHosts[rand.Next(0, mailHosts.Count)]}",
                     PhoneNumber = rand.Next(400000000, 900000000).ToString()
                 };
 
@@ -106,7 +107,7 @@ namespace DataCreditGenerator
         private void SetListNames(string csvFile, ref List<string> list)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-
+            
             using (Stream stream = assembly.GetManifestResourceStream(csvFile))
             using (StreamReader reader = new StreamReader(stream))
             {
@@ -114,7 +115,7 @@ namespace DataCreditGenerator
                 {
                     string line = reader.ReadLine();
                     if (!string.IsNullOrEmpty(line))
-                        list.Add((line.Substring(0, 1).ToUpper() + line.Substring(1).ToLower()).Trim());
+                        list.Add(StringHelper.ToPascalCase(line));
                 }
             }
         }
