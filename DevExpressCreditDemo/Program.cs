@@ -21,8 +21,10 @@ namespace DevExpressCreditDemo
         {
             Clients c = new Clients();
             var l = c.ClientList(true, new List<string>() { "94011590292" });
-            
-            Agreements agr = new Agreements();
+
+            Setttings s = new Setttings();
+                s.RepaymentGenerator = DataCreditGenerator.Heleprs.ERepaymentGenerator.TotalRandom;
+            Agreements agr = new Agreements(s);
             var a = agr.AgreementList(l);
 
             IDataLayer dataLayer = ConnectionHelper.GetDataLayer(DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema); ;

@@ -32,7 +32,7 @@ namespace DataCreditGenerator
             SetListNames("DataCreditGenerator.ResourcesCSV.nazwiska_zenskie.csv", ref _femaleLastNameList);
 
             if (settings is null) _settings = new Setttings();
-            _settings = settings;
+            else _settings = settings;
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace DataCreditGenerator
             for (int i = 0; i < _settings.ClientCount; i++)
             {
                 EGender gender = rand.Next(0, 1) == 1 ? EGender.Female : EGender.Male;
-                bool active = rand.Next(1, 101) < _settings.ProbabilityOfActivClient;
+                bool active = rand.Next(1, 101) <= _settings.ProbabilityOfActivClient;
 
                 string pesel = Pesel.Generate(gender);
                 while (peselList.Contains(pesel))
