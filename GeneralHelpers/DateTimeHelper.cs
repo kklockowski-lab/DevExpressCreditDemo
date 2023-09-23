@@ -1,14 +1,9 @@
-﻿using DevExpress.Charts.Native;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DevExpressCreditDemo.Helpers
+namespace GeneralHelpers
 {
-    internal class DateTimeHelper
+    public class DateTimeHelper
     {
         public static int MonthCountBetween(DateTime startDate, DateTime endDate)
         {

@@ -1,6 +1,6 @@
 ﻿using DevExpress.Xpo;
 using DevExpressCreditDemo.credit;
-using DevExpressCreditDemo.Helpers;
+using GeneralHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

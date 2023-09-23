@@ -98,7 +98,6 @@
     <Compile Include="DataGenerator\RandomedAgreement.cs" />
     <Compile Include="DataGenerator\RandomedPerson.cs" />
     <Compile Include="DataGenerator\RandomedPeyment.cs" />
-    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.cs" />
     <Compile Include="ORMCreditDBModelCode\Agreement.Designer.cs">
       <DependentUpon>Agreement.cs</DependentUpon>
@@ -220,6 +219,10 @@
     <ProjectReference Include="..\DataCreditGenerator\DataCreditGenerator.csproj">
       <Project>{d210c633-bff4-438d-90ed-e161d45c13b6}</Project>
       <Name>DataCreditGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralHelpers\GeneralHelpers.csproj">
+      <Project>{ab575a08-aa2e-48d6-aad1-25524182da23}</Project>
+      <Name>GeneralHelpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

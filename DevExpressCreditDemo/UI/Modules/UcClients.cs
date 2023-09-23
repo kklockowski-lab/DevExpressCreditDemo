@@ -1,18 +1,10 @@
 ﻿using DevExpress.Xpo;
-using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpressCreditDemo.credit;
-using DevExpressCreditDemo.Helpers;
 using DevExpressCreditDemo.ORMCreditDBModelCode;
+using GeneralHelpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DevExpressCreditDemo.UI.Modules
 {
