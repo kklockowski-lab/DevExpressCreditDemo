@@ -23,7 +23,7 @@ namespace DevExpressCreditDemo
             var l = c.ClientList(true, new List<string>() { "94011590292" });
 
             Setttings s = new Setttings();
-                s.RepaymentGenerator = DataCreditGenerator.Heleprs.ERepaymentGenerator.TotalRandom;
+            s.RepaymentGenerator = DataCreditGenerator.Heleprs.ERepaymentGenerator.TotalRandom;
             Agreements agr = new Agreements(s);
             var a = agr.AgreementList(l);
 

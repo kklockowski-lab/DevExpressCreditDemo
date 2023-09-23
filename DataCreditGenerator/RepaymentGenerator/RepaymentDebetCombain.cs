@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 namespace DataCreditGenerator.RepaymentGenerator
 {
-    public class RepaymentNoDebet : BaseRepaymentGenerator, IRepaymentListGenerator
+    public class RepaymentDebetCombain : BaseRepaymentGenerator, IRepaymentListGenerator
     {
-        public RepaymentNoDebet(Agreement agrement) : base(agrement) { }
+
+
+        public RepaymentDebetCombain(Agreement agrement) : base(agrement) { }
 
         public IList<Repayment> GeneratePayments
         {

@@ -44,12 +44,16 @@
     <Compile Include="Agreements.cs" />
     <Compile Include="Clients.cs" />
     <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="RepaymentGenerator\BaseRepaymentGenerator.cs" />
     <Compile Include="RepaymentGenerator\IRepaymentListGenerator.cs" />
     <Compile Include="Model\Agreement.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Repayment.cs" />
     <Compile Include="Helpers\PESEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepaymentGenerator\RepaymentDebetCombain.cs" />
+    <Compile Include="RepaymentGenerator\RepaymentDebetNoPaid.cs" />
+    <Compile Include="RepaymentGenerator\RepaymentDebetAfterDate.cs" />
     <Compile Include="RepaymentGenerator\RepaymentNoDebet.cs" />
     <Compile Include="Repayments.cs" />
     <Compile Include="Setttings.cs" />
